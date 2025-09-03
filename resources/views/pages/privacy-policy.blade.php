@@ -6,7 +6,7 @@
 <section class="bg-blue-600 text-white py-16">
     <div class="container mx-auto px-4 text-center">
         <h1 class="text-4xl font-bold">Privacy Policy</h1>
-        <p class="text-lg mt-2">Effective Date: January 1, 2025</p>
+        <p class="text-lg mt-2">Effective Date: {{ \Carbon\Carbon::parse('2025-01-01')->format('F d, Y') }}</p>
     </div>
 </section>
 
@@ -23,59 +23,71 @@
 
 <!-- Policy Content -->
 <section class="py-16 bg-white">
-    <div class="container mx-auto px-4 max-w-4xl text-gray-700 space-y-10 text-base leading-relaxed">
+    <div class="container mx-auto px-4 max-w-4xl text-gray-700 leading-relaxed">
 
-        <div>
-            <h2 class="text-xl font-semibold text-blue-800 mb-2">1. Introduction</h2>
-            <p>Edu Legion is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you interact with our website or apply for admissions.</p>
-        </div>
-
-        <div>
-            <h2 class="text-xl font-semibold text-blue-800 mb-2">2. Information We Collect</h2>
-            <ul class="list-disc ml-6 space-y-1">
-                <li>Personal information (e.g., name, email, phone number, address)</li>
-                <li>Academic details submitted during registration</li>
-                <li>Payment and transaction details (if applicable)</li>
-                <li>Technical data such as browser type, IP address, device info</li>
+        <!-- Table of Contents -->
+        <div class="mb-10 p-5 bg-blue-50 rounded-lg shadow-sm">
+            <h2 class="text-lg font-semibold text-blue-800 mb-3">📖 Table of Contents</h2>
+            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                <li><a href="#intro" class="hover:text-blue-600">1. Introduction</a></li>
+                <li><a href="#info" class="hover:text-blue-600">2. Information We Collect</a></li>
+                <li><a href="#use" class="hover:text-blue-600">3. How We Use Your Information</a></li>
+                <li><a href="#sharing" class="hover:text-blue-600">4. Sharing Your Data</a></li>
+                <li><a href="#security" class="hover:text-blue-600">5. Data Security</a></li>
+                <li><a href="#rights" class="hover:text-blue-600">6. Your Rights</a></li>
+                <li><a href="#contact" class="hover:text-blue-600">7. Contact Us</a></li>
             </ul>
         </div>
 
-        <div>
-            <h2 class="text-xl font-semibold text-blue-800 mb-2">3. How We Use Your Information</h2>
-            <p>We use the collected information to:</p>
-            <ul class="list-disc ml-6 space-y-1">
-                <li>Process admission applications</li>
-                <li>Communicate with you regarding your application or status</li>
-                <li>Provide support and respond to queries</li>
-                <li>Improve user experience and secure our platform</li>
-            </ul>
-        </div>
+        <!-- Collapsible Policy Sections -->
+        <div x-data="{ open: null }" class="space-y-6">
 
-        <div>
-            <h2 class="text-xl font-semibold text-blue-800 mb-2">4. Sharing Your Data</h2>
-            <p>We do not sell your personal data. Your data may be shared with trusted third-party services (e.g., payment gateways or email providers) only when necessary and with appropriate safeguards.</p>
-        </div>
+            <div id="intro" class="bg-gray-50 p-5 rounded shadow" x-data="{ show: false }">
+                <button @click="show = !show" class="w-full text-left font-semibold text-blue-800 text-lg flex justify-between">
+                    1. Introduction
+                    <span x-show="!show">➕</span>
+                    <span x-show="show">➖</span>
+                </button>
+                <div x-show="show" class="mt-3 text-gray-700 text-sm">
+                    Edu Legion is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information.
+                </div>
+            </div>
 
-        <div>
-            <h2 class="text-xl font-semibold text-blue-800 mb-2">5. Data Security</h2>
-            <p>We implement security measures to protect your personal information, including encryption and access control. However, no system is 100% secure, and you share data at your own risk.</p>
-        </div>
+            <div id="info" class="bg-gray-50 p-5 rounded shadow" x-data="{ show: false }">
+                <button @click="show = !show" class="w-full text-left font-semibold text-blue-800 text-lg flex justify-between">
+                    2. Information We Collect
+                    <span x-show="!show">➕</span>
+                    <span x-show="show">➖</span>
+                </button>
+                <div x-show="show" class="mt-3 text-gray-700 text-sm">
+                    <ul class="list-disc ml-6 space-y-1">
+                        <li>Personal details (name, email, phone, address)</li>
+                        <li>Academic details during registration</li>
+                        <li>Payment and transaction data</li>
+                        <li>Technical data such as IP and browser info</li>
+                    </ul>
+                </div>
+            </div>
 
-        <div>
-            <h2 class="text-xl font-semibold text-blue-800 mb-2">6. Your Rights</h2>
-            <p>You have the right to access, correct, or delete your personal data. You may also withdraw consent where applicable by contacting us at the email or phone below.</p>
-        </div>
+            <!-- Repeat for other sections (use, sharing, security, rights, contact) -->
 
-        <div>
-            <h2 class="text-xl font-semibold text-blue-800 mb-2">7. Contact Us</h2>
-            <p>If you have questions or concerns about our privacy practices, please contact:</p>
-            <ul class="mt-2 space-y-1">
-                <li><strong>Email:</strong> admissions@example.com</li>
-                <li><strong>Phone:</strong> +91 98765 43210</li>
-            </ul>
-        </div>
+            <div id="contact" class="bg-gray-50 p-5 rounded shadow" x-data="{ show: true }">
+                <button @click="show = !show" class="w-full text-left font-semibold text-blue-800 text-lg flex justify-between">
+                    7. Contact Us
+                    <span x-show="!show">➕</span>
+                    <span x-show="show">➖</span>
+                </button>
+                <div x-show="show" class="mt-3 text-gray-700 text-sm space-y-2">
+                    <p>If you have questions about our privacy practices, contact us:</p>
+                    <p>📧 <strong>Email:</strong> admissions@example.com</p>
+                    <p>📞 <strong>Phone:</strong> +91 98765 43210</p>
+                </div>
+            </div>
 
+        </div>
     </div>
 </section>
+
+<!-- Alpine.js for toggle -->
 
 @endsection

@@ -10,10 +10,10 @@
                 ['name' => 'Arts', 'icon' => '🎨']
             ] as $prog)
                 <div class="col-lg-3 col-md-6">
-                    <div class="program-card h-100 p-4 text-center bg-white rounded-4 shadow-sm">
+                    <div class="program-card h-100 p-4 bg-white rounded-4 shadow-sm text-center">
                         <div class="fs-1 mb-3">{{ $prog['icon'] }}</div>
                         <h4 class="fw-bold text-dark mb-2">{{ $prog['name'] }}</h4>
-                        <p class="small text-muted">
+                        <p class="small text-muted mb-0">
                             Cutting-edge curriculum, expert faculty & real-world learning.
                         </p>
                     </div>

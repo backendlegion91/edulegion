@@ -8,14 +8,14 @@
       What Our Students Say
     </h2>
 
-    <div class="swiper w-full max-w-3xl mx-auto">
+    <div class="swiper w-full max-w-4xl mx-auto">
       <div class="swiper-wrapper">
 
         <!-- Slide 1 -->
         <div class="swiper-slide bg-white p-8 sm:p-10 rounded-2xl shadow-lg relative">
           <div class="absolute -top-6 left-6 text-5xl text-blue-200">“</div>
           <p class="text-lg text-gray-700 text-center leading-relaxed italic">
-          Edu Legion made the admission journey easy. The faculty and placements are top-notch.
+            Edu Legion made the admission journey easy. The faculty and placements are top-notch.
           </p>
           <div class="mt-6 text-center">
             <p class="font-semibold text-blue-700">Aditi Sharma</p>
@@ -53,7 +53,11 @@
       </div>
 
       <!-- Pagination -->
-      <div class="swiper-pagination mt-6 text-center"></div>
+      <div class="swiper-pagination mt-6"></div>
+
+      <!-- Navigation -->
+      <div class="swiper-button-prev text-blue-600"></div>
+      <div class="swiper-button-next text-blue-600"></div>
     </div>
   </div>
 </section>
@@ -61,18 +65,28 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- Swiper Init with Auto Slide -->
+<!-- Swiper Init -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     new Swiper('.swiper', {
       loop: true,
       autoplay: {
-        delay: 4000, // Auto slide every 4 seconds
-        disableOnInteraction: false, // Keep auto sliding after user interaction
+        delay: 4000,
+        disableOnInteraction: false,
       },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      effect: 'slide',
+      speed: 600,
+      breakpoints: {
+        640: { slidesPerView: 1 },
+        1024: { slidesPerView: 2, spaceBetween: 30 },
       },
     });
   });
