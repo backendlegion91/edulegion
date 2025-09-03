@@ -1,23 +1,24 @@
-<section class="bg-gray-100 py-20">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-4xl font-extrabold text-gray-800 mb-12">Explore Our Programs</h2>
-        
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+<section class="programs-section py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold text-dark mb-5">Explore Our Programs</h2>
+
+        <div class="row g-4">
             @foreach([
                 ['name' => 'Engineering', 'icon' => '🛠️'],
                 ['name' => 'Business', 'icon' => '💼'],
                 ['name' => 'Science', 'icon' => '🔬'],
                 ['name' => 'Arts', 'icon' => '🎨']
             ] as $prog)
-            <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-                <div class="text-6xl mb-4">{{ $prog['icon'] }}</div>
-                <h4 class="text-xl font-bold text-gray-800 mb-2">{{ $prog['name'] }}</h4>
-                <p class="text-sm text-gray-600 leading-relaxed">
-                    Cutting-edge curriculum, expert faculty & real-world learning.
-                </p>
-            </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="program-card h-100 p-4 text-center bg-white rounded-4 shadow-sm">
+                        <div class="fs-1 mb-3">{{ $prog['icon'] }}</div>
+                        <h4 class="fw-bold text-dark mb-2">{{ $prog['name'] }}</h4>
+                        <p class="small text-muted">
+                            Cutting-edge curriculum, expert faculty & real-world learning.
+                        </p>
+                    </div>
+                </div>
             @endforeach
         </div>
     </div>
 </section>
-

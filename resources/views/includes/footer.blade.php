@@ -1,59 +1,55 @@
-<footer class="bg-blue-900 text-white pt-12 pb-6">
-    <div class="container mx-auto px-4 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-        
-        <!-- Logo & Tagline -->
-        <div>
-            <a href="{{ url('/') }}" class="flex items-center text-2xl font-bold tracking-wide hover:scale-105 transition-transform duration-200">
-                <span class="text-white">Edu</span><span class="text-yellow-300">Legion</span>
-            </a>
-            <p class="text-sm text-gray-200 mt-3 leading-relaxed">
-                Building careers since 1995. <br class="block md:hidden" />
-                NAAC A+ Accredited.
-            </p>
+<footer class="footer-custom text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row g-4">
+            
+            <!-- Logo & Tagline -->
+            <div class="col-lg-3 col-md-6">
+                <a href="{{ url('/') }}" class="d-inline-flex align-items-center fs-4 fw-bold text-decoration-none mb-2">
+                    <span class="text-white">Edu</span><span class="text-warning">Legion</span>
+                </a>
+                <p class="small text-light">
+                    Building careers since 1995. <br class="d-md-none" />
+                    NAAC A+ Accredited.
+                </p>
+            </div>
+
+            <!-- Menu -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-semibold mb-3">Menu</h5>
+                <ul class="list-unstyled small">
+                    <li><a href="{{ url('/') }}" class="footer-link">Home</a></li>
+                    <li><a href="{{ url('/courses') }}" class="footer-link">Programs</a></li>
+                    <li><a href="{{ url('/contact') }}" class="footer-link">Contact</a></li>
+                    <li><a href="{{ url('/help') }}" class="footer-link">Help</a></li>
+                    <li><a href="{{ url('/eligibility') }}" class="footer-link">Eligibility</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-semibold mb-3">Quick Links</h5>
+                <ul class="list-unstyled small">
+                    <li><a href="{{ url('/faq') }}" class="footer-link">FAQ</a></li>
+                    <li><a href="{{ url('/about') }}" class="footer-link">About Us</a></li>
+                    <li><a href="{{ url('/privacy-policy') }}" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="{{ url('/terms') }}" class="footer-link">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-semibold mb-3">Contact</h5>
+                <ul class="list-unstyled small">
+                    <li><address class="mb-1">123 University Rd, Pune, India</address></li>
+                    <li>Email: <a href="mailto:admissions@example.com" class="footer-link">admissions@example.com</a></li>
+                    <li>Phone: <a href="tel:+919876543210" class="footer-link">+91 98765 43210</a></li>
+                </ul>
+            </div>
+
         </div>
 
-        <!-- Menu -->
-        <div>
-            <h4 class="font-semibold text-lg mb-4">Menu</h4>
-            <ul class="space-y-2 text-sm text-gray-300">
-                <li><a href="{{ url('/') }}" class="hover:underline">Home</a></li>
-                <li><a href="{{ url('/courses') }}" class="hover:underline">Programs</a></li>
-                <li><a href="{{ url('/contact') }}" class="hover:underline">Contact</a></li>
-                <li><a href="{{ url('/help') }}" class="hover:underline">Help</a></li>
-                <li><a href="{{ url('/eligibility') }}" class="hover:underline">Eligibility</a></li>
-            </ul>
+        <div class="text-center small text-secondary mt-4">
+            &copy; {{ date('Y') }} EduLegion. All rights reserved.
         </div>
-
-        <!-- Quick Links -->
-        <div>
-            <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
-            <ul class="space-y-2 text-sm text-gray-300">
-                <li><a href="{{ url('/faq') }}" class="hover:underline">FAQ</a></li>
-                <li><a href="{{ url('/about') }}" class="hover:underline">About Us</a></li>
-                <li><a href="{{ url('/privacy-policy') }}" class="hover:underline">Privacy Policy</a></li>
-                <li><a href="{{ url('/terms') }}" class="hover:underline">Terms & Conditions</a></li>
-            </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div>
-            <h4 class="font-semibold text-lg mb-4">Contact</h4>
-            <ul class="space-y-2 text-sm text-gray-300">
-                <li>
-                    <address class="not-italic">123 University Rd, Pune, India</address>
-                </li>
-                <li>
-                    Email: <a href="mailto:admissions@example.com" class="hover:underline">admissions@example.com</a>
-                </li>
-                <li>
-                    Phone: <a href="tel:+919876543210" class="hover:underline">+91 98765 43210</a>
-                </li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="text-center text-sm text-gray-400 mt-10">
-        &copy; {{ date('Y') }} EduLegion. All rights reserved.
     </div>
 </footer>
