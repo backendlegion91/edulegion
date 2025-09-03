@@ -6,24 +6,28 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'Edu Legion')</title>
+    <link rel="stylesheet" href="{{ asset('css/newtheme.css') }}">
 
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     @stack('styles')
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans antialiased">
+<body class="bg-light text-dark">
 
     <!-- Navbar -->
     @include('includes.header')
 
     <!-- Page Content -->
-    <main class="container mx-auto p-6">
+    <main class="container py-4">
         @yield('content')
     </main>
 
     <!-- Footer -->
     @include('includes.footer')
+
+    <!-- Bootstrap JS (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     @stack('scripts')
 </body>
