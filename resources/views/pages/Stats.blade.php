@@ -1,26 +1,32 @@
-<section class="bg-white py-20">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+<section class="stats-section py-5 bg-white">
+    <div class="container">
+        <div class="row g-4 text-center">
             
             <!-- Stat Item -->
-            <div class="p-6 bg-blue-50 rounded-xl shadow-sm hover:shadow-md transition">
-                <div class="text-4xl mb-2 text-blue-600">📥</div>
-                <h2 class="text-5xl font-extrabold text-blue-700">12,500+</h2>
-                <p class="text-base text-gray-600 mt-1">Applications in 2024</p>
+            <div class="col-md-4">
+                <div class="stat-card p-4 h-100">
+                    <div class="fs-2 mb-2 text-primary">📥</div>
+                    <h2 class="display-5 fw-bold text-primary">12,500+</h2>
+                    <p class="text-muted mb-0">Applications in 2024</p>
+                </div>
             </div>
 
             <!-- Stat Item -->
-            <div class="p-6 bg-blue-50 rounded-xl shadow-sm hover:shadow-md transition">
-                <div class="text-4xl mb-2 text-blue-600">🎓</div>
-                <h2 class="text-5xl font-extrabold text-blue-700">45+</h2>
-                <p class="text-base text-gray-600 mt-1">UG/PG Programs</p>
+            <div class="col-md-4">
+                <div class="stat-card p-4 h-100">
+                    <div class="fs-2 mb-2 text-primary">🎓</div>
+                    <h2 class="display-5 fw-bold text-primary">45+</h2>
+                    <p class="text-muted mb-0">UG/PG Programs</p>
+                </div>
             </div>
 
             <!-- Stat Item -->
-            <div class="p-6 bg-blue-50 rounded-xl shadow-sm hover:shadow-md transition">
-                <div class="text-4xl mb-2 text-blue-600">💼</div>
-                <h2 class="text-5xl font-extrabold text-blue-700">98%</h2>
-                <p class="text-base text-gray-600 mt-1">Placement Rate</p>
+            <div class="col-md-4">
+                <div class="stat-card p-4 h-100">
+                    <div class="fs-2 mb-2 text-primary">💼</div>
+                    <h2 class="display-5 fw-bold text-primary">98%</h2>
+                    <p class="text-muted mb-0">Placement Rate</p>
+                </div>
             </div>
 
         </div>

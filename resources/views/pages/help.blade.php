@@ -3,28 +3,27 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="bg-blue-600 text-white py-16 text-center">
-    <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold mb-3">Help & Support</h1>
-        <p class="text-lg">Find answers to common questions or reach out for support.</p>
+<section class="py-5 text-white text-center" style="background: #2563eb;">
+    <div class="container">
+        <h1 class="display-5 fw-bold mb-2">Help & Support</h1>
+        <p class="lead">Find answers to common questions or reach out for support.</p>
     </div>
 </section>
 
 <!-- Breadcrumb -->
-<nav class="bg-white py-4 border-b border-gray-200">
-    <div class="container mx-auto px-4">
-        <ol class="flex items-center space-x-2 text-sm text-gray-600">
-            <li><a href="/" class="hover:text-blue-600">Home</a></li>
-            <li>/</li>
-            <li class="text-blue-800 font-semibold">Help & Support</li>
+<nav class="bg-light py-2" aria-label="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Help & Support</li>
         </ol>
     </div>
 </nav>
 
 <!-- FAQ Section -->
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-4 max-w-4xl">
-        <h2 class="text-3xl font-bold text-center text-blue-900 mb-10">Frequently Asked Questions</h2>
+<section class="py-5 bg-white">
+    <div class="container col-lg-8">
+        <h2 class="h3 fw-bold text-center text-primary mb-4">Frequently Asked Questions</h2>
 
         @php
             $faqs = [
@@ -35,11 +34,24 @@
             ];
         @endphp
 
-        <div class="space-y-6">
+        <div class="accordion" id="faqAccordion">
             @foreach ($faqs as $index => $faq)
-                <div class="bg-blue-50 p-5 rounded-lg shadow hover:shadow-md transition">
-                    <h3 class="font-semibold text-blue-800 text-lg">{{ $faq['q'] }}</h3>
-                    <p class="text-gray-700 mt-2">{{ $faq['a'] }}</p>
+                <div class="accordion-item mb-2">
+                    <h2 class="accordion-header" id="heading{{ $index }}">
+                        <button class="accordion-button {{ $index > 0 ? 'collapsed' : '' }}" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}"
+                                aria-expanded="{{ $index === 0 ? 'true' : 'false' }}"
+                                aria-controls="collapse{{ $index }}">
+                            {{ $faq['q'] }}
+                        </button>
+                    </h2>
+                    <div id="collapse{{ $index }}"
+                         class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
+                         aria-labelledby="heading{{ $index }}" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            {{ $faq['a'] }}
+                        </div>
+                    </div>
                 </div>
             @endforeach
         </div>
@@ -47,11 +59,11 @@
 </section>
 
 <!-- Contact Support CTA -->
-<section class="bg-gray-100 py-12">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-2xl font-bold text-blue-800 mb-3">Still have questions?</h2>
-        <p class="text-gray-600 mb-6">Reach out to our support team — we’re here to help!</p>
-        <a href="/contact" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+<section class="bg-light py-5 text-center">
+    <div class="container">
+        <h2 class="h4 fw-bold text-primary mb-2">Still have questions?</h2>
+        <p class="text-muted mb-3">Reach out to our support team — we’re here to help!</p>
+        <a href="/contact" class="btn btn-primary btn-lg">
             Contact Support
         </a>
     </div>
